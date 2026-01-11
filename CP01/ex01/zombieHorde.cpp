@@ -2,26 +2,19 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
-    Zombie	**newZombie;
+    Zombie	*newZombie;
     int iter = 0;
 
     if (N <= 0)
         return NULL;
-    newZombie = new (std::nothrow) Zombie*[N];
+    newZombie = new (std::nothrow) Zombie[N];
     if(!newZombie)
         return NULL;
     while(iter < N)
     {
-        newZombie[iter] = new (std::nothrow) Zombie(name);
-        if(!newZombie[iter])
-        {
-            while(--iter >= 0)
-                delete newZombie[iter];
-            delete newZombie;
-            return NULL;
-        }
+        newZombie[iter] = Zombie(name);
         iter++;
     }
-    return (*newZombie);
+    return (newZombie);
 }
 

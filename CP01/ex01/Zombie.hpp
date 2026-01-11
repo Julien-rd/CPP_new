@@ -7,12 +7,12 @@ public:
 
 	Zombie( std::string name);
 	~Zombie( void );
+    Zombie( void );
     void announce( void );
 
 private:
 
     std::string _name;
-    Zombie( void );
 
 };
 

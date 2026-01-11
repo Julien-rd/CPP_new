@@ -3,16 +3,14 @@
 int main(void)
 {
     Zombie	*Zombie_horde;
-    Zombie	*tmp;
     int i = -1;
     int amount = 10;
 
     Zombie_horde = zombieHorde(amount, "julien");
+    if(!Zombie_horde)
+        return 1;
     while(++i < amount)
-    {
-        Zombie_horde->announce();
-        tmp = Zombie_horde;
-        Zombie_horde++;
-        // delete tmp;
-    }
+        Zombie_horde[i].announce();
+    delete[] Zombie_horde;
+    return 0;
 }
