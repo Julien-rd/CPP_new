@@ -1,13 +1,11 @@
 #include "HumanB.hpp"
 
 HumanB::HumanB(std::string new_name)
-    : name(new_name), weapon(NULL)
+    : name(new_name), weapon(NULL) 
 {
 }
 
 HumanB::~HumanB() {
-    if(weapon != NULL) 
-        delete weapon;
     return ; 
 }
 
@@ -18,9 +16,7 @@ void HumanB::attack(void) {
         std::cout << name << " has no weapon" << std::endl;
 }
 
-void HumanB::setWeapon(Weapon new_weapon)
+void HumanB::setWeapon(Weapon &new_weapon)
 {
-    if(weapon != NULL)
-        delete(weapon);
-    weapon = new Weapon(new_weapon.getType());
+    weapon = &new_weapon;
 }
