@@ -9,17 +9,18 @@ Harl::~Harl() {
 	return ;
 }
 
-void Harl::complain( std::string level ){
-	if(level == "DEBUG")
-		this->debug();
-	if(level == "INFO")
-		this->info();
-	if(level == "WARNING")
-		this->warning();
-	if(level == "ERROR")
-		this->error();
+void Harl::complain(std::string level) {
+    int i = 0;
+	void (Harl::*funcs[4])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+    std::string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+    while(i < 4) {
+        if (level == levels[i]) {
+            (this->*funcs[i])();
+            return;
+		}
+		i++;
+    }
 }
-
 void Harl::debug(){
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
