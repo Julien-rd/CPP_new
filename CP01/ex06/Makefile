@@ -1,7 +1,7 @@
 C		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME		= harl
+NAME		= harlFilter
 
 OBJDIR		= obj
 DEPDIR		= $(OBJDIR)

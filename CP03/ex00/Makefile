@@ -1,12 +1,12 @@
 C		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME		= harl
+NAME		= claptrap
 
 OBJDIR		= obj
 DEPDIR		= $(OBJDIR)
 
-SRCS		= Harl.cpp main.cpp 
+SRCS		= ClapTrap.cpp main.cpp 
 
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 DEPS		= $(addprefix $(DEPDIR)/, $(SRCS:.cpp=.d))
